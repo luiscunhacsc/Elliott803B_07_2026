@@ -1,0 +1,561 @@
+/* ============================================================
+   Layout — Header, Desk Area, Operator Panel, Peripherals
+   ============================================================ */
+
+/* ─── Header Banner ─── */
+#header-banner {
+    width: 100%;
+    max-width: 1350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 40px 20px;
+    position: relative;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#machine-logo {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.5));
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+#machine-logo:hover {
+    filter: drop-shadow(0 4px 20px rgba(212, 168, 67, 0.35));
+    transform: scale(1.02);
+}
+
+#header-subtitle {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+#header-banner:hover #header-subtitle {
+    opacity: 1;
+}
+
+/* Subtle separator line below header */
+#header-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(212, 168, 67, 0.25) 30%,
+            rgba(212, 168, 67, 0.4) 50%,
+            rgba(212, 168, 67, 0.25) 70%,
+            transparent);
+}
+
+/* ─── Desk Area (Operator Panel + Clock) ─── */
+#desk-area {
+    width: 1350px;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 16px;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+/* Operator Panel */
+#operator-panel {
+    flex: 1;
+    background: linear-gradient(175deg, #353c4a 0%, #2a3040 50%, #252b38 100%);
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    border-right: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle top highlight line on operator panel */
+#operator-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+/* Clock Column */
+#clock-column {
+    flex: 0 0 160px;
+    background: linear-gradient(175deg, #353c4a 0%, #2a3040 50%, #252b38 100%);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        var(--shadow-lg),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    border-left: 1px solid rgba(255, 255, 255, 0.04);
+    position: relative;
+}
+
+/* Divider line between panel and clock */
+#clock-column::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    bottom: 15%;
+    left: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+/* ─── Panel Sections ─── */
+.panel-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+.panel-label {
+    color: var(--text-muted);
+    font-family: var(--font-ui);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-indicator {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--accent-green);
+    text-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+}
+
+.checkbox-label {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s ease;
+}
+
+.checkbox-label:hover {
+    color: var(--text-primary);
+}
+
+.checkbox-label input[type="checkbox"] {
+    accent-color: var(--accent-gold);
+}
+
+.punch-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.panel-buttons-col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Panel Status indicators — fixed-width to prevent layout thrashing */
+.panel-status-cpu {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    color: #ff6b6b;
+    letter-spacing: 0.4px;
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+.panel-status-algol {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent-amber);
+    letter-spacing: 0.4px;
+    min-width: 160px;
+    white-space: nowrap;
+}
+
+.panel-status-debug {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: #8892a4;
+    letter-spacing: 0.2px;
+    min-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ─── Operator Buttons ─── */
+.operator-btn {
+    background: linear-gradient(to bottom, #e8e8e8, #d0d0d0);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #aaa;
+    padding: 7px 14px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 10px;
+    color: #2a2a2a;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.12s ease;
+    letter-spacing: 0.3px;
+}
+
+.operator-btn:hover {
+    background: linear-gradient(to bottom, #f2f2f2, #ddd);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.operator-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #999;
+}
+
+/* ─── Tape Controls ─── */
+.tape-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.tape-select {
+    padding: 6px 8px;
+    background: #0a0f18;
+    color: var(--accent-green);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    outline: none;
+    height: 30px;
+    min-width: 220px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease;
+    /* Prevent layout thrash from repaint cycles */
+    contain: layout style;
+}
+
+.tape-select:focus {
+    border-color: var(--accent-gold);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(212, 168, 67, 0.15);
+}
+
+.custom-file-upload {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: var(--bg-panel);
+    color: var(--text-secondary);
+    font-size: 11px;
+    border-radius: 4px;
+    height: 30px;
+    line-height: 18px;
+    transition: all 0.2s ease;
+}
+
+.custom-file-upload:hover {
+    background: var(--bg-panel-alt);
+    color: var(--text-primary);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* ─── Peripherals Section ─── */
+#peripherals-section {
+    width: 1350px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.peripheral-unit {
+    background: linear-gradient(to bottom, #e6e4e0, #d8d5d0);
+    border: 1px solid #bbb;
+    border-radius: var(--radius-md);
+    padding: 12px;
+    box-shadow: var(--shadow-lg);
+    flex: 1;
+    transition: box-shadow 0.3s ease;
+}
+
+.peripheral-unit:hover {
+    box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.peripheral-header {
+    background: linear-gradient(to right, #2a2e38, #333842);
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: var(--radius-sm);
+    color: white;
+}
+
+.ph-title {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.ph-status {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--accent-green);
+    text-shadow: 0 0 4px rgba(34, 197, 94, 0.5);
+}
+
+/* ─── Teleprinter ─── */
+#teleprinter-container {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#teleprinter-output {
+    flex-grow: 1;
+    width: 100%;
+    background-color: #faf9f6;
+    color: #1a1a1a;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    padding: 16px;
+    border: none;
+    resize: none;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08);
+    outline: none;
+    line-height: 1.5;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+/* ─── Plotter ─── */
+#plotter-container {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.plotter-wrapper {
+    flex-grow: 1;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ddd;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+#plotter-canvas {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Algol Install Source ─── */
+.algol-install-source {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.algol-install-source-label {
+    color: var(--text-secondary);
+    font-family: var(--font-ui);
+    font-size: 9px;
+    letter-spacing: 0.7px;
+    font-weight: 600;
+}
+
+.algol-install-source-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    padding: 3px;
+    background: var(--bg-deep);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.65);
+}
+
+.algol-source-btn {
+    min-height: 24px;
+    border: 1px solid #6b7483;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #f2f2f2, #cecece);
+    color: #2f3640;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.08s ease;
+}
+
+.algol-source-btn:hover {
+    filter: brightness(1.04);
+}
+
+.algol-source-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+.algol-source-btn.active {
+    background: linear-gradient(to bottom, #fff3a0, #f5d44f);
+    border-color: #d3ad2f;
+    color: #1b1b1b;
+    box-shadow: 0 0 7px rgba(251, 192, 45, 0.7);
+}
+
+.algol-source-btn:disabled {
+    cursor: default;
+    opacity: 0.6;
+    filter: grayscale(0.15);
+}
+
+/* ─── Guide Highlight ─── */
+.guide-target {
+    box-shadow: 0 0 20px 10px #ffeb3b !important;
+    border: 2px solid #ffeb3b !important;
+    animation: guide-pulse 1.0s infinite ease-in-out !important;
+    z-index: 10000 !important;
+    position: relative !important;
+    outline: 2px solid #ffeb3b !important;
+    outline-offset: 2px;
+}
+
+@keyframes guide-pulse {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 235, 59, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 30px 15px rgba(255, 235, 59, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 10px 5px rgba(255, 235, 59, 0.5);
+    }
+}
+
+/* ─── Guide Pointer ─── */
+.guide-pointer {
+    position: absolute;
+    z-index: 9999;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -100%);
+    animation: bounce 1s infinite;
+}
+
+.guide-hand {
+    font-size: 40px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    line-height: 1;
+}
+
+.guide-msg {
+    background: #FFEB3B;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    margin-bottom: 5px;
+    border: 1px solid #FBC02D;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, -100%);
+    }
+
+    50% {
+        transform: translate(-50%, -110%);
+    }
+}
+
+/* ─── Animations ─── */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

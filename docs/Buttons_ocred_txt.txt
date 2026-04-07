@@ -1,0 +1,1698 @@
+﻿TEA 
+57.2.8.6h. 
+
+GENERAL OPERATION AND MAINTENANCE 
+
+OF THE 803B COMPUTER 
+
+Before beginning any specific operation 
+the operator who is unfemiliar with the 
+machine is recommended to read right 
+through the instructions concerned, to 
+get an overall idea of what is to be done. 
+
+INTRODUCTION 
+
+TYPICAL OPERATION 
+
+X Switch On 
+2 Release Buttons 
+3 Clear Store 
+h Normal 
+
+.5 Operate 
+6 Wait 
+
+S Read or Obey 
+8 Clear Store 
+9 Load Reader 
+
+0  Read 
+1 Word Generctor 
+2 Operate 
+3 Normal 
+h Operate 
+5 Next Step 
+6 Next Steps 
+T Finishing 
+8 Switching Off 
+
+PN MDD MDD DD MU M 
+
+
+
+3. KEYBOARD 
+
+3.1 Power Switches 
+3.2 Program Operating Controls 
+343 Word Generator 
+
+PAPER TAPE OPERATING INSTRUCTIONS 
+
+Power Switching 
+Tape Reader 
+Loading Tape into the Punch 
+Operation 
+Reader Lamp 
+Hold-up Lamp 
+Errors 
+Reproducer Controls on Paper Tape 
+Stations Types 1 and 2 
+
+.9 Further Details of Paper Tape Station 
+Type 3 
+
+.10 Tape Winder 
+
+SWITCHING AND TESTING 
+
+Sl Switching On 
+5.2 Test Programs 
+5.3 Switching Off 
+
+MAINTENANCE 
+
+6.1 Elliott Tape Reader 
+6.2 Teletype Punch 
+
+FUSES 
+
+Tl Positions of Fuses 
+
+:h e 
+
+BDA DW Fw e 
+
+
+
+T.2 Method for Tracing Fuse Failures 
+
+8. LAMPS IN SWITCH BUTTONS 
+
+8.3 Removing Lamp 
+8.2 Replacing Lemp 
+
+APPENDIX 1 
+
+FUSES IN FILM EQUIPMENT 
+
+APPENDIX 2 
+
+FUSES IN CARD READER AND LINE PRINTER 
+
+- iii - 
+
+
+
+T.1.8. 
+57.2.8.6h, 
+
+1. INTRODUCTION 
+
+An 803B installation consists of: 
+
+(i) Cabinets containing electronic equipment, 
+
+(ii) A paper tape station (Figure 1), 
+
+(iii) A keyboard (Figure 2), 
+
+(iv) A bettery charger, 
+
+Associated with the basic installation there may be 
+
+(v) Other peripheral equipment if required, 
+
+(vi) Usually, some air conditioning equipment. 
+
+During normal operation an operator will use the paper tape 
+equipment and the controls on the paper tape station and on the keyboard, 
+This description is concerned with this operation, and the maintenance for 
+which the operator can be responsible. 
+
+2. TYPICAL OPERATION 
+
+This section is planned to help the novice by showing a typical 
+sequence of operations. When this particular seguence is understood, many 
+other operating sequences may be regerded (at first) as varistions from it 
+and some of the other sections of this document may be seen to be explaining 
+what heppens when the controls ere used, and why elternative sequences must 
+sometimes be used. 
+
+Before reading these typical instructions, the reader should 
+look et all of the illustrations, so that he (or she) knows the names of 
+the various parts of the installation. 
+
+The sequence is shown in Figure 3. It assumes that the equipment 
+is not switched on. 
+
+
+
+NOTE Apart from the BATTERY ON and OFF and the COMPUTER ON and OFF 
+buttons in the top line of the Keyboard, it is impossible to 
+danage the computer by making a mistake in using the Keyboard. 
+But if anybody has any work stored in the computer, wrong use 
+of these controls may make that work worthless, 
+
+2.1  Switch On 
+
+The details of the switching-on process will depend upon the 
+particular installation, and it will be necessary to refer to section 4.1 
+below, The instructions refer to the BATTERY ON button and the COMPUTER ON 
+button: they are indicated in Figure 3. 
+
+2.2  Release Buttons 
+
+The instruction to press the four RELEASE buttons will ensure 
+that the Word Generator (the four rows of buttons on the left of the Keyboard) 
+is "cleared" of any instruction that mey have been left by somebody else. 
+
+2.3 Clear Store 
+
+Instructions 3 to 8 in this list will not nlways be followed: 
+there are times when they will be quite incorrect. So a beginner must first 
+obtein permission from the Operator in charge, Pressing the CLEAR STORE 
+button sets the switch (the button remains down) so that the Keyboard is ready. 
+
+2.h Normal 
+
+This is one of the three alternatives "READ", "NORMAL" and "OBEY", 
+If it is down already, nothing happens when it is pressed: if one of the 
+others is down, that one comes up and the NORMAL button remains down. 
+
+2.5 Operate 
+
+The operations already mentioned have prepared the instruction 
+to be given to the computer, but the instruction is not passed to it until 
+the OPERATE bar is pressed. This gives time for setting the buttons, checking 
+them and changing the setting if a mistake is found. 
+
+57.2.8.6h, 
+
+
+
+2.6 Wait 
+
+The computer takes some seconds to clear all of the thousands 
+of locations in the store, one by one. 
+
+2.7 Read or Obey 
+
+Either of these will stop the computer, 
+
+2.8 Clear Store 
+
+This button is pressed to release it. 
+
+2.9  Load Reader 
+
+Instructions are given in section 4.2 belew. 
+
+2,10 Read 
+
+The next instruction to the computer will be to read the word 
+generator (the buttons on the left) into its Instruction Register. 
+
+2,11 Word Generstor 
+
+Against each button (except "B") there is a number. 1If a 
+button is down it indicetes this number: if it is up it indicates zero. 
+The number passed to the computer is the total of these numbers in the 
+particular series of buttons. The first number is from O to 7 ( 4 + 2 + 1) 
+inclusive, the second from O to 7, and the third from O to 8191, (B cen be 
+ignored at present). The instruction is to be 40 0, so only the first h is 
+pressed. It remains down (as shown). 
+
+2,12 Qperate 
+
+The computer resds instruction 40 O into its Instruction Register 
+and waits for the next instruction. 
+
+5T7+2.8.64. 
+
+
+
+2.13 Normel 
+
+This will cause the computer, when told to operate, to operate 
+normelly. 
+
+2.1k Operate 
+
+The computer operrtes normeall; s cbeying the instruction in its 
+instruction reglster (which is 40 O, causing it to go to the first instruction 
+in Location No.O in the store, and to continue automatlcally) It reads the 
+paper tape into the store. 
+
+2.15 Hext Step 
+
+What happens next depends upon the details of the program on the 
+tape it has just read. The computer mey emit a high-pitched steady note 
+(the DYNAMIC STOP, showing that it has Tinished what it had to do) or it may 
+make irregular sounds, often following a recogniseble pattern, and give some 
+output such as paper tape from the punch or words on the teleprinter, 
+
+2,16 lext Steps 
+
+There are so many uses for the computer that it is difficult to 
+glve "tjplcal" operations any further. Very often the first tepe will merely 
+give the computer instructions for reading, storing and using futher tapes. 
+A second tape mey give it very general instructions for a great veriety of 
+complicated operations such as long methematical calculations. A third tape 
+may give it the program for performing these operations upen the data which 
+will follow. &A fourth tepe might then bring into the computer the words and 
+the numbers upon which the work has to be done, These tepes must be used in 
+the correct order, and for each the detailed instructions will be given in 
+wrltlng on & sheet of paper which must be returned with the paper tape (and, 
+in some ceses, with the computer output). The instructions are likely to 
+resenble Numbers 9 to 14 in the typical series of operations in Figure 3. If 
+the setting of the Word Generator has to be changed, the old setting can be 
+cleared by pressing the red buttons on the left, before pressing the buttons 
+for the new setting. 
+
+(CAUTION. "Clear the Number Generator” does WOT mean "Clear Store™!) 
+
+57.2.8.6h, 
+
+
+
+2,17 Finishing 
+
+The instructions supplied with the program will say what action 
+the computer will take to show that it hes finished the work it had to do. 
+There will then be some "tidying up" to be done: input tapes will have to 
+be wound up end put in their proper places: if a punch has given an output 
+on paper tepe, the appropriate RUNOUT button must be pressed until some 
+inches of tape have been produced with a single line of holes, and then the 
+tepe is torn off anywhere in this length, wound up and either sent away to 
+the user, or put into a teleprinter for "printing up", according to 
+instructions. 
+
+Finally, if the computer is likely to be used again within an 
+hour or so, it will usually be left running ready for the next user. 
+
+2.18 Switching Off 
+
+See section L.l for instructions for switching off. 
+
+3. KEYBOARD 
+
+By means of the keyboard, which is shown in Figure 2, the 
+operator can (&) switch the computer on and off, (b) control the running of 
+progrems, and (c) insert numbers (or instructions) in the binary representation 
+used within the machine. Certain indications of the state of the machine or 
+the program run are also given, 
+
+3.1 Power Switches 
+
+These are the Battery and Computer On and Off buttons the use of 
+which is described in section L.,  When both battery and computer are on, the 
+keyboerd is illuminated by strip lights behind a diffusing screen. 
+
+3.2  Program Operating Controls 
+
+In this group mey be included the following controls: 
+
+Operate Bar (push), 
+
+57.2.8.6h. 
+
+
+
+Read, Normal and Obey buttons (interlocked), 
+
+Selected Stop button (push-push), 
+
+Clear Store button (push-push), 
+
+fystem Reset button (push), 
+
+Manual Data button (push-push). 
+
+Controls described as "push" return up as soon as pressure is 
+removed: those described as "push-push" alternately remain down and return 
+up: of the three described as "interlocked" one is alweys down, each one 
+vhen pressed releasing the others end itself remaining down. These controls 
+must never be pressed through less than their full travel. 
+
+3.2.1 Read, Normal and Obey Buttons and Operate Bar 
+
+These three buttons are mechanically interlocked so that only one 
+can be down at a time, futomatie running of a program requires that the 
+Hormal button shall be down; pressing either of the others will cause the 
+machine to stop with the next instruction waiting in the instruction register., 
+
+If the Obey button has been pressed, pressing the Operate bar 
+will cause the instruction to be obeyed, after which the machine stops again. 
+This type of operation is called step-by-step working, If the Read button 
+has been pressed, pressing the Operate ber causes the instruction set on the 
+F1 and W1 buttons of the word genmerator (Section 3.3) to replace the content 
+of the instruction register. The Step-by-Step lamp lights when either 
+button is pressed. 
+
+Thus the sequence Read, Operate, Obey, Operate will cause the 
+machine to obey the instruction set on the word generator instead of that at 
+which it stopped. 
+
+To resume automatic running after either the Read or the Obey 
+button has been pressed, press the Normal button and then the Operate bar. 
+
+57.2.8.64, 
+
+
+
+3.2.2 Selected Stop Button 
+
+If the Selected Stop Button is pressed during automatic 
+running of a program, the program will continue to run until either 
+instruction is received in the instruction register from the location 
+specified by the N2 buttons of the word generator (Section 3.3). The 
+machine then stops with this instruction waiting to be obeyed, (Usually 
+the machine stops on the first instruction of the pair, but it will stop on 
+the second instruction if this is reached by a control transfer.) 
+
+The instruction is obeyed when the Operste bar is pressed, and 
+if the next instruction is from the same location the machine will stop., As 
+soon as the current instruction comes from a different location (either as a 
+result of a jump, or in the normel sequence) the machine continues 
+eutomatically until the selected location is again reached. 
+
+When the machine has reached a selected stop the Step-by-Step 
+lanp lights and step-by-step working may be commenced by pressing the Obey 
+button as explained in the preceding section, 
+
+3.2.3 Clear Store Button 
+
+This button is mounted in a guard ring to prevent accidental 
+operation. The effect of pressing the button once is to fill the store 
+(epart from locations O to 3 which are protected) with parity-checked zeros. 
+The button also has the same effect as the System Reset button (see below), 
+except thet its use does not stop the machine. Pressing the button e 
+second time restores normel operating conditions. 
+
+The correct procedure for clearing the store is as follows: 
+
+Press Obey 
+
+Press Clear Store (the button stays down) 
+
+Press Normal 
+
+Press Operate 
+
+Wait at least 6 seconds (L096-word store) or 12 seconds (8192-word store) 
+
+Press Obey 
+
+Press Clear Store (to release). 
+
+57.3.8,.6h. 
+
+-3 
+
+
+
+The reason for pressing the Obey button at the end of this sequence is that 
+otherwise the machine will attempt to obey the initial instructions. 
+
+3.2.4  System Reset Button 
+
+This button is mounted in a guard ring. It is used 
+
+(a) To stop the read cycle when a pure binary tape has been 
+read, end 
+
+() To clear within the machine certain comtrol conditions 
+vhich may be set up as a result of e mechine fault or a 
+program error and which cannot be cleared by the program 
+itself, It should not be used unless such an error 
+condition occurs (as indicated by keyboard lamps). 
+
+Pressing the button causes the current instruction to be completed 
+(not necessarily correctly) and clears the peripheral busy, interrupt and 
+fixed-point overflow conditions. It alsc suppresses any block transfer 
+instructions in peripheral controllers, although it does not affect the 
+internal conditions of peripheral devices, the individual reset buttons on 
+these devices being provided for this purpose. 
+
+The Overflow, Busy and Block Transfer lamps are extinguished when 
+the System Reset Button is pressed, and the machine is left in the step-by-step 
+state with the next instruction in the instructicn register. 
+
+3.2.5 Manual Data Button 
+
+If this button is pressed once, the couputer stops when a T0 
+instruction is reached, and the Busy lamp is 1lit. The purpose of this 
+button is to allow the operator to set a word on the word generator (section 
+3.3) without the risk of being overtaken by the program. Pressing the 
+Operate bar allows the TO instruction to be obeyed, and the machine then runs 
+until the next 70 instruction is reached. To restore normal conditions the 
+Manual Data button is pressed a second time. 
+
+5T7.2.8.64. 
+
+
+
+306 Indicator Lamps and Loudspeaker 
+
+Most of the indicator lemps heve been mentioned in the preceding 
+sections. The Step-by-Step lamp lights whenever the machine is stopped by 
+the Read, Obey, Selected Stop or System Reset operation, or by the detection 
+of a store parity error or floating-point overflow. These last two are 
+distinguished by their corresponding lemps. 
+
+The Busy lamp lights whenever the machine is held up by a busy 
+peripheral device, or when a function 70 is detected while the Manual Data 
+button is in use. The Block Transfer lamp lights during any long function, 
+€.g. one of those in group 5, but in practice it is unlikely to be observed 
+except during a function TT7. 
+
+The Floating-point Overflow lemp is inoperative except in 
+floating-point machines. 
+
+The loudspesker circuit receives a pulse every time any instruction 
+of groups h to 7 is obeyed. Consequently the tone emitted depends upon the 
+frequency of these instructions in the program. The engineer is recommended 
+to familierise himself with the sound of test progrems, since en unusual 
+sound may well be the first indication of a fault. The velume control. beside 
+the loudspeaker grill should on this account be set to maximum when test 
+programs are being run. 
+
+3.3 Word Generator 
+
+The word generator is a set of 39 buttons representing the 39 
+digits of a computer word. For operating convenience the buttons are 
+arranged in four rows corresponding to the four parts of an instruction pair: 
+
+Fl (six buttons) 
+
+N1 and B (fourteen buttons) 
+
+F2 (six buttons) 
+
+n2 (thirteen buttons) 
+
+All of the buttons pressed down will remain down until the red 
+button at the left-hand end of the row is pressed to release them. 
+
+5T.3.8.6h. 
+
+
+
+The word generator may be used as en input device (by function 70), 
+the 39-digit pattern being placed in the accumulator. The Fl and N1 buttons 
+provide a source of instructions when the Read and Obey buttons are used 
+(Section 3.2.1). The N2 buttons are used to specify an address for selected 
+stop operation (Section 3.2.2). 
+
+h, PAPER TAPE OPERATING INSTRUCTIONS 
+
+There are three designs of paper tope station: 
+the Type 1 has provision for one tape reader and one punch, the Type 2 has 
+provision for two readers and two punches, and the Type 3 has provision for 
+two readers, two punches end a teleprinter and can cperate in either the 
+5-hole or 8-hole mode. Operation of the three types is similar, except that 
+the Types 2 and 3 have independent controls for readers and punches. The 
+control panels are shown in Figure 4 (Type 1), Figure 5 (Type 2) end 
+Figure 6 (Type 3). A third form, Type 24, is similar to Type 2, but includes 
+& directly coupled teleprinter in place of the off-line telenrlnt:r. 
+
+4.1 Power Switching 
+
+To operate the paper tape station the power cabinet must first be 
+switched on (Section 5.1). 
+
+With the Paper Tape Station in the Auto mode, its supplies are 
+automatically switched on when the computer is switched on at the Keyboard. 
+If the OFF button on the control panel lights it is an indication that power 
+supplies are availeble, but that the Paper Tape Station is in the Manual 
+node.  Press the Manual button and then the On button. The Off button 
+light goes out and the On button lights, indicating that supplies are now 
+switched on and thet the Paper Tape Station is ready for operation. 
+
+To switch off press the Off button; this is effective whether 
+the peper tape station is in the automstic or manual mode. If it is in the 
+automatic mode its supplies will be removed nutcmatlcally when the computer 
+is switched off at the keyboard. Note thet it is possible to run the Creed 
+equipment on Type 1 and 2 stations when the computer power is off provided 
+thet the Off button is lit. 
+
+5T.3.8.64., 
+
+= 0 
+
+
+
+4.2  Tape Reader 
+
+4.2.1  Adjustment for Tape Width 
+
+The tape reader mey be adjusted for different tape widths by 
+moving the load bar away from or towerds the body of the reader, The 
+correct setting must be mede for the tape width to be used, S5-track tape 
+without printing is accepted with the bar pushed fully in; 5-track tepe with 
+printing or T-track tape is accepted with the bar pulled out to the first 
+notch, and 8-track tape is accepted with the bar pulled fully out. 
+
+4.2.2  Loading Tape into the Reader 
+
+First check that the end to be placed in the reader is the 
+leading end. To avoid possible confusion this should be clearly indicated 
+by e written or printed mark. Meny library programs have their code punched 
+in plain language (i.e. directly readsble characters) at the leading end. 
+Do not feed these punchings through the reader unless this action is known to 
+be correct, The main part should be rolled up evenly and placed on the 
+spindie provided in a tape holder to the right of the reader. 
+
+Hold the tape with the leading end in the left hand and place it 
+along the edge of the chromium plated table at the front of the tape reader, 
+Ensure thet the tape is the correct way up with the sprocket hole occupying 
+position h reading from back to front (that is towards the operator). It 
+should be noted that this is the reverse of 803A practice end the correct 
+positioning of the tape should be carefully checked from Figure T. 
+
+Hold the tape on the table with the tips of the index fingers 
+while at the same time depressing the black load bar with the thumbs. Keeping 
+the bar fully depressed slide the tape evenly under the cepstan roller end 
+brake pad until it touches the rear guide pins. 
+
+If it is desired to start at a specific character the row of 
+holes denoting the character to be read must be located IMMEDIATELY TO THB 
+RIGHT OF THE CLEAR SLOT COVERING THE PHOTOCELLS. Normally, however, tapes 
+start with 2a lead of blank tape, and provided the blank portion is under the 
+lamp it need not be carefully positioned longitudinally. 
+
+57.2.8,64, 
+
+- 11 - 
+
+
+
+NOTE If the reader Runout button is pressed in order to run a 
+portion of the tape through without reading it, the Reeder 
+lamp will light and the reader will not respond to the Read 
+button. After using the Runout button for this purpose, 
+press the Load bar on the reader (as if a new tape were being 
+inserted) and it will be found that the reader will then 
+respond to the Read button. 
+
+4.2.3 To Remove a Tape from the Reader 
+
+Fully depress the load bar and slide the tape forward until 
+it is clear of the capstan roller and brake pad.  Alternatively, the 
+Run-out button, which is located on the tape reader itself, may be used, 
+PROVIDED THE TAPE IS NOT TORN OR FOLDED. 
+
+WARNINGS Do not allow the tepe reader to run without tape 
+because prolonged contact between the capsten and 
+the clutch rollers will cause serious damage. 
+Do not write marks on the tape under the optical 
+system: sooner or later the lens will be damaged. 
+Never have 2 tape standing in the reader for a long 
+time. The heat will meke it brittle. 
+
+b.2.4  Tape Reader motor switch 
+
+The switch to the left of the nameplate switches the motor on 
+and off. It is generally left in the On position so that the tape reader 
+motor starts and stops when the computer is switched on and off. If the 
+computer is left on but the tape reader is not in use for a long period, it 
+is recormended that the tape reader should be switched off, Do not switch 
+the reader on or off while n program is running. 
+
+The main purpose of the switch is to ensble the motor to be 
+switched off quickly should a tape become jammed in the reader. It is 
+important to note that, in the event of this oecurrence, the program will 
+have to be read into the computer again, 
+
+57.2.8.6h. 
+
+
+
+4.3 Loading Tape into the Punch 
+
+The punch is adjusted for S-hole or 8-hole tape by turning the 
+capstan shown in Figure 8. The setting is shown by engravings visible 
+through an eperture at the end of this sub-assembly, 
+
+The method of loading a fresh spool of blank tape into the 
+punch will be made clear by reference to Figure 8. Switch the Paper Tape 
+Station into the Manual state. Lift the spring loaded arm end place the 
+spool with its projecting shafts in the carriage slots. Return the spring 
+loaded arm to its operating position, gently resting on the outer surface of 
+the tape. Feed the tape through the eye in the tensioning arm and around 
+the jockey rollers, then make sure the end of the tape is torn cleanly, and 
+thread it through the punch block. Check for correct operation by 
+momentarily depressing the Run-out button located on the control penel. 
+
+During the loading operation the paper tape station should be in 
+the Manual mode, When the spring-loaded arm is ellowed to close, the Run- 
+out lamp lights to indicate that the punch cannot be operated by the Computer. 
+After the insertion of a new reel of tape the Run-out lamp must be 
+extinguished by switching to Auto before the punch is opersble. 
+
+4.4 Operation 
+
+Having first checked that the supply of tape in the punch is 
+adequate, place the program tape in the tape reader, On pressing the load 
+bar the lamp in the Reader button lights indicating that the tape resder is 
+in the load phese. 
+
+Press Reader button. The tape moves forward one character, and 
+the character that was initially positioned over the mask is read into the 
+buffer store. Also the Reader lamp is extinguished showing that the load 
+phase is complete. During the load phase the paper tape station cannot 
+accept reader instructions from the computer, and hence there is no need to 
+g0 to Manual for this operation, 
+
+In the paper tape stations Types 2 and 3 there are two Reader 
+buttons, and the controls of the two readers are independent. Hence while 
+
+57.2.8.6k, 
+
+= < — 
+
+
+
+one reader is being loaded the other remains operational, The Run-out 
+buttons on the control panel affect the tape punches only (there are two 
+punch run-out buttons on the Types 2 and 3 control panel). 
+
+The Manual button is positioned to the left of the Reader button 
+on the control panel (Figures h to 6). The Manual switch is of the push- 
+push type. When the paper tape station is in the menual mode it is icoleted 
+from the computer and indication of this is given by the illuminstion of the 
+button.  When it is pressed again the light is extinguished indicating that 
+the paper tape station is in the automatic mode, that is, completely under 
+computer control. 
+
+To halt the operation of the paper tape station press the Manuel 
+button. Both reader and punch cease to operate, and any subsequent reasder 
+or punch instruction will stop the computer., If an instruction is held up 
+by the paper tape station being in the Menuel mode, the Hold-up lamp lights, 
+but the instruction will be corrcctly executed when the tape stetion is 
+returned to the sutonatic mode. Hote that when the punch is operating at 
+full speed the Hold-up lamp will remein on almost continuously. 
+
+4.5 Reader Lamp 
+
+When the yellow button marked Reader is illuminated it shows that 
+an error has been detected (Section 4.7), or that the tape station is in the 
+load phase. After correcting an crror shown in this wey it is necessary to 
+press the load bar and to complete the load phase sequence as described in 
+Section h.2. 
+
+k.6  Hold-up Lemp 
+
+This is illuminated when a read or punch instruction is given by 
+the computer and cannot be executed. A check should be made of the following 
+possible causes and action teken as indicated. 
+
+(a) Tape Reader Error. See Section h.7. 
+
+() Paper tape station in manual mode. If the Manual 
+button is illuminsted it should be pressed; the light 
+is then extinguished and the tape station reverts to the 
+automatic mode. 
+
+57.2.8.6k4. 
+
+s 7 « 
+
+
+
+(c) Availoble blank tape in punch nearing exhaustion, 
+indicated by illumination of the Run-out button. 
+
+h.T  Errors 
+
+The paper tape station will detect the following types of error, 
+indication being given by the illuminetion of the Reader lamp in cach case. 
+
+The mix of two characters due to creep. 
+
+Jitter due either to bounce in the mechanism or to bad edges on 
+the holes in the tepe. 
+
+When the reader stops because an error has been detected the 
+tepe should be examined in the region of the last few characters read. Its 
+condition may werrant the use of a new program tape. 
+
+Repositioning the tape or inserting a nev tape will require the 
+load phese sequence to be carried out egein. In the course of this the 
+depression of the load bar autometically clears the buffer store, thus 
+preventing erronecus data from reaching the computer. 
+
+4.8 Reproducer Controls on Paper Tape Stations Types 1 and 2 
+
+Buttons controlling the Creed Teleprinter. and its sssociated 
+transmitter are grouped on the right of the paper station control panel 
+(Figures h and 5). 
+
+The green push-push button illuminetes when pressed to switch 
+the reproducer power supplies on. Its action is independent of the On/Off 
+switch located on the left of the control panel which switches supplies to 
+the reader and punch, 
+
+The Auto button is illuminated when the teleprinter is under the 
+control of the transmitter. 
+
+The adjecent Step button is not illuminated, Vhen it is pressed 
+only a single character is read. It must always be pressed as an intermediste 
+step in the transition from Auto to Manual. 
+
+57.2.8.6k4, 
+
+= .- 
+
+
+
+Illumination of the Manual button indicates that the teleprinter 
+is under manual control. 
+
+4.9  Further Details of Paper Tape Station Type 3 
+
+The Type 3 paper tape station can have two readers, two punches 
+and a teleprinter. 
+
+4.9.1  Control Panel 
+
+Some versions of the Paper Tape Station Type 3 have three three— 
+way switches, as shown at the right-hand side of Figure 6, so thet either 
+output chennel can be connected to Punch 1, Punch 2 or Teleprinter. This 
+switching must be done BEFORE a program begins, 
+
+Some versions of the Type 3 Paper Tepe Station have a fourth 
+switch, to the right of those shown. This makes it possible to isolate 
+the teleprinter from the computer so that it can be used for preparing tapes 
+or printing them out. 
+
+4.9.2  Teleprinter 
+
+Full instructions for the teleprinter will be found in the 
+instruction book provided by its makers, The operator will be responsible 
+for seeing that there is always sufficient paper in the machine for the work 
+it has to do. 
+
+4,10 Tepe Winder 
+
+Tepe passes from the reeder or the punch into a bin, which is 
+under the slatted top of the paper tape station. It is usual to hang the 
+treiling end of each tape carefully over the side of the bin (or over a 
+slat) so that it is available for rewinding, Tapes are normelly re-wound 
+from the trailing end, so that the leading end is on the outside ready for 
+use next time, and then held together by the use of a rubber band. A new 
+operator hes to learn how to avoid knots, tengles snd other damage to tapes, 
+and should not attempt to work at the same speed as a more experienced user. 
+Any damage (obvious or suspected) must be reported immediately. 
+
+57.2.8.6h4, 
+
+=16 = 
+
+
+
+CAUTION Before using the tape winder, ALWAYS inspect 
+the disc. Youmay "put the brake on" by 
+touching it with your finger, and a sharp 
+edge cen cut you. ENSURE THE RIM IS SMOOTH, 
+Take care not to drop the disc or damage it. 
+Report any chipping or cracking of the disc, 
+
+5. SWITCHING AND TESTING 
+
+5.1 Switching On 
+
+(a) Switch Mains on. The fans will start up. 
+
+(v) Fully depress the Battery On button on the keyboard. 
+Check output from battery charger at the meter on the 
+charger cabinet, if there is one. 
+
+Fully depress the Computer On button (on the keyboard). 
+The keyboard screen lamps will light up. 
+
+Check whether the Off button on the Paper Tape Station 
+is illuminated. If not, the station is fully operational 
+and in the sutomatic mode, If the button is illuminated, 
+press the On button and then the -Manual button. 
+
+Check that the reader and punch motor switches are on. 
+
+(€] Ensure that the punch is loaded with tape. 
+
+(g) After switching on, it is usual to run the test tape. 
+
+57+2.8.6k. 
+
+= VE m 
+
+
+
+5.2 Test Programs 
+
+The following test programs should be run daily: 
+
+X1, X2, X3: if Floating Point is included, X5: 
+
+if the On-Line Teleprinter is included, X8: 
+
+if the installation includes a Card Reader end/or a Film Store, 
+the appropriate test progrems (X4 and X7 respectively) should 
+be run weekly. 
+
+Operating instructions for these programs are published separataly, and it 
+is important that ell operators make themselves thoroughly conversant with 
+the tests. 
+
+5.3 Switching Off 
+
+(a) If the Paper Tape Station is on Manual, switch this 
+off first. 
+
+() When the Paper Tape Station is on Auto, fully depress 
+keyboard Computer Off button, 
+
+(e) Depress Battery Off button. 
+
+(¢) Switch meins off. 
+
+6. MATHTENANCE 
+
+Maintenance and adjustments require the services of a skilled 
+engineer(for whom this leaflet is not primarily intended). However, the 
+operator's responsibilities include the following, 
+
+57.2.8,6k4, 
+
+« 18 = 
+
+
+
+6.1 Elliott Tape Reader 
+
+6.1.1 Cleaning 
+
+For proper operation, readers must be kept clean. Where 
+conditions are bad, readers should be cleaned as often as necessary, but in 
+any circumstances they should alwsys be cleaned daily as follows: 
+
+:” The light mask and the platform should be dusted with 
+a camel-hair brush. 
+
+a The lower edge of the prism should be wiped with a 
+lint-free rag only. 
+
+Covers are provided for the tape readers, end these should always 
+be put on the units when they are not in use. Dirty conditions near the tape 
+readers can cause considerable operating difficulties. 
+
+Errors in reading can be caused by dirt (such as chad from 
+punching) lodging in the optical peth. It is the operator's responsibility 
+to keep this equipment clean. Any more serious fault should be left for 
+the engineer to investigate: the operator can change the reader. 
+
+6.1.2 To chenge the Tape Reader 
+
+Switch the peper tape station off as described above. 
+Unplug the two connectors at the rear of the tape reader and connect them to 
+the replacement reeder, ensuring that threads of both male and female portions 
+of the uniters are free from dust or grit, Any particles left on the 
+threads will demage them and prevent the uniter from meking proper contact. 
+Uniters should not be forced, and care should be teken that the locking rings 
+are not cross-threaded. Ensure that the uniters are fully screwed home. 
+Switch the paper tape station on again, 
+
+57.2,8.64, 
+
+- U » 
+
+
+
+6.2 Teletype Punch 
+
+Chad Box 
+
+The plastic chad box should be erptied regularly. The punch 
+knives will be damaged if an over-full box makes the chads jam. 
+
+To change the Punch 
+
+Switch off the paper tape station as described above, 
+Unplug the two cables at the rear of the punch and plug them into the 
+replacement punch. Switch the paper tape station on again. 
+
+T FUSES 
+
+The operator is provided with a supply of spare fuses and is 
+expected in certein circumstances to be able to fit them as replacenents, 
+Any such action must be recorded and reported to the engineer, The symptoms 
+will usually suggest which fuse or fuses to examine, as outlined below., When 
+a fuse has blown, the fact can often be seen if its gless tube is viewed 
+against the light, but if there is any doubt a spere can be used in its place, 
+as a neans of testing, Any operators who are not sure sbout the method of 
+removing and replacing fuses should ask the engineer to show them. 
+
+CAUTIONS 
+
+The rating of each fuse is marked on it. If the value of the 
+blown fuse differs from that shown in this list, switch the 
+computer off and refer the matter to the engineer. 
+
+NEVER use a fuse with an incorrect rating: for example, 
+if a 24 (i.e. 2 anp) fuse is specified, no other value is to be 
+used, even for testing. 
+
+ALWAYS SWITCH THE POWER OFF before touching a fuse. 
+
+57.2.8.6k. 
+
+- S0 = 
+
+
+
+If the replacement for a blown fuse itself inmediately 
+blows on switching on, switch off and send for the engineer, 
+Do not attempt & second replacement. 
+
+If it is found to be necessary to use & screwdriver on 
+o fuse, choose one with a wide blade, and use it GENTLY. 
+
+7.1 Positions of Fuses 
+
+Operators should know where the fuses are to be found. 
+
+- There are fuses in the main supply: these and their switch are 
+sometimes said to be "on the wall" although in some installations they are 
+elsevhere. 
+
+\ 
+
+There are fuses FS1 to FST behind the large cover at the reer of 
+the peper tape station, as shown in Figure 9. The lamp near each shows 
+whether it is allowing current to pass. 
+
+Under the large cover at the front of the paper tape station, at 
+the lower right-hend corner (sec Figure 10) there are FS1 and FS2 for the 
+-24V power supply. 
+
+There are fuses in most types of battery charger, but as there 
+are several types of charger end the fuses may not be accessible to operators 
+this subject may be a matter for a local instruction. 
+
+There are fuses in the back and in the front of the corputer 
+power cabinet, as shown in Figures 11 and 12. 
+
+There ore fuses in the Store cabinet, os shown in Figure 13, 
+
+If the installation has an 8192-word store, there are five fuses 
+in the second store cubicle, as shown in Figure lh. 
+
+57.2.8.64. 
+
+- sM < 
+
+
+
+Appendices to this description deal with fuses in additional 
+peripheral equipment. 
+
+T.2 Method for Tracing Fuse Failures 
+
+CAUTION 
+
+Please ask your engineer to check the fuse ratings 
+in these instructions, and keep them up to date. 
+Unless that is done, the list is NOT AUTHORITATIVE, 
+
+(1) If there is ABSOLUTE SILENCE, with no fan working 
+A~ anywhere, no power is being received. If you arc 
+
+working by daylight, try switching the lights on to 
+see whether it is a complete power feilure. 
+
+(2) COMPUTER SILENT BUT ROOM LIGHTS ARE ON. Is the "switch 
+on the wall" properly on? If so, switch it off and 
+check the fuses associated with it, 
+
+(3) CENTRAL PROCESSOR FANS OFF, OTHERS ON. Check power 
+cabinet (Figure 11), fuses 17 and 18 (15 amps). 
+
+(%) PAPER TAPE STATION FANS OFF, OTHERS ON, Check at the 
+rear of the power cabinet (Figure 11), fuses 21 and 22 
+(5 anmps). 
+
+(5) FIIM EQUIPMENT FANS OFF, OTHERS ON. Check &t the rear 
+of the power cabinet (Figure 11), fuses 19 and 20 (5 amps). 
+
+(6) FANS WORKING, MACHINE DOES WOT RESPOND TO "OW™ BUTTON, 
+= Check at the front of the power cabinet (Figure 12), 
+
+fuse 28 (2 emps). 
+
+(1) MACHINE SWITCHES ON BUT WILL NOT REMAIN ON. (Do not 
+try too often). Check at the front of the central 
+processor (Figurel3), fuses 1 to 25 inclusive, and if 
+there is a second store cubicle, check the five fuses 
+in it, also (see Figure 14): 
+
+57.2.8.64, 
+
+- 22 - 
+
+
+
+FUSES IN STORE CABINET: 
+
+Label Fuse Ratings (amps) 
+
++10V Link only 
+
+R/W 
+
+AMPS 1-20 
+
+AMPS 21-40 
+
+GEN 1 
+
+GEN 2 
+
++10V TRIG 10 
+
+=10V Link only 
+
+NL1 7 
+
+BISTABLES 
+
+TH2 10 
+
+TF2 14 
+
+GEN 12 
+
+=20V Link only 
+
+LOG1 1h 
+LoG2 
+
+10G3 
+
+oGk 
+
+LOG5 
+
+LoG6 
+
+LOGT 
+
+L0G8 
+
+LOG9 
+
+57.2.8.6h, 
+
+EP SNEV |W  MNM 
+
+mM mM M NM yV N NV mNM m mM om mMNPmE  E mM mM mM |M M 
+
+
+
+Cont'd, 
+
+Label Fuse Ratings (amps) 
+INHIB 23 
+
+TH2 2h 
+
+GEN 25 5 with certain 
+peripherals 
+
+2 or 3 othervise according 
+to specification of 
+coriputer 
+
+=20V TRIG Fs FL with floating point 
+
+10 otherwise 
+
+FUSES IN SECOND STORE (8192 WORD) CABINET, IF SUPPLIED: 
+
+Label Ratings (emps) 
+
++10V R/W 2 
+
++10V AMP 2 
+
+-10V TH2 d 
+
+-20V INHIBIT 
+
+~20V TH2 2: 
+
+Do not be misled by the lebels AMPS1-20 and AMPS21-40: 
+these refer to amplifiers! 
+
+57.2.8.6k. 
+
+- Ol s 
+
+
+
+PAPER TAPE STATION NOT SWITCHING ON, 
+
+(a) If the lamp in the OFF Lutton does not go on, 
+check at the rear of the paper tope station 
+(Figure 9), lower left~hand corner, the double 
+fuse called FST, mounted in a block with neon 
+indicators (5 emps). 
+
+(v) OFF button 1it, check at the rear of the paper 
+tape station (Figure 9), fuse € (15 amps) in 26V 
+supply, as indicated by the lamp on the seme level. 
+
+At the rear of the paper tape station (Figure 9), 
+if any other lamp in the column is not 1lit, check 
+the fuse on the seme level. 
+
+500 mA FSh 5 amps 
+
+500 mA FS5 7 amps 
+3 amps FS6 15 anps 
+
+Paper tape stations types 2 and 3, check at the 
+front (Figure 10) lower right-hand corner, fuses 
+FS1 (1 amp) and FS2 (2 amps). 
+
+8. LAMPS IN SWITCE BUTTONS 
+
+If a lamp in & switch button fails it will be so misleading that 
+it should be removed and & new one fitted, 
+
+Renember to SWITCH OFF AT THE WALL before attempting to adjust or 
+replace any of these lamps. 
+
+57.2.8.6k, 
+
+- 25 - 
+
+
+
+8.1 Removing Lamp 
+
+Switch off "at the wall", 
+
+Pull the top of the switch off, 
+
+For removing the lamp, & special tool may be available. It fits 
+over the lemp and grips it. Otherwise, a piece of " (6 mn) plastic tubing 
+can be used. It is even possible to use a small piece of paper, tightly 
+rolled up, but cere must be teken not to leave a fragment of it where it may 
+find its wey to the switch contacts. The larp has a wedge-shaped end, and 
+pulls stroisht out. Notice carefully which way the end goes, as the new 
+lamp must be inserted with the end "facing the same way". 
+
+8.2  Replacing Lamp 
+
+Check that the supply is off "at the wall". 
+
+Hold the lamp so that the wedge-shaped end is the correct vay 
+round (probably in all cases with the "sharp edge" from side to side, so that 
+it pushes between contacts above end below). Gently press it into place 
+with the fingers (no tool is required). Press it right home: when the 
+contacts 1ift off the sloping parts on to the parallel sides, it slides more 
+easily. Unless it is pressed home, it may shake loose. 
+
+57.2.8.6k, 
+
+- 26 = 
+
+
+
+T.I.5.57 
+
+APPENDIX 1 
+
+FUSES 1IN FILM EQUIPMENT 
+
+CONTROLLER 
+
+Neme gr Identification Fuse Roting (emps) 
+
+ileon 5 
+Heon 2 Link or 5 
+
+=10V LOGIC 1 3 
+
+=10V LOGIC 2 4 2 
++10V LOGIC 1 5 500 mA 
++10V LOGIC 2 6 500 mA 
+
+The layout of the ebove fuses is: 
+
+E 5 
+h 6 
+
+The fuses in the pover units, lower down in the Controller, 
+
+, PK UNIT FS1 
+
+FS2 
+
+F83 
+
+PG UNIT Fs1 
+
+= t - 
+
+
+
+HANDLER 
+
+Name or Identification Fuse Rating (emps) 
+
+Neon h ? 5 
+Neon 2 Link or 5 
+
+~20V MECH 3 5 
+-20V R/W h 5 
+-10V R/W 5 3 
+-10V LOGIC 6 L 
++10V MECH T7 2 
+
++10V R/W 8 d 
+
++10V LOGIC 9 1 
+
+The layout of the above fuses is: 
+
+1 2 Link 3 h Link 5 6 Link 7 8 9 Tamp 
+
+The lamp on the right indicates the output from the Servo Power 
+Unit. 
+
+The fuses in the power units, lower down in the Handler, are: 
+
+PG UNIT FS1 34 
+
+PK UNIT FS1 3A 
+
+FS2 2A 
+
+FS3 14 
+
+
+
+The fuses in the Servo Power Unit, at the foot of the front of 
+Handler, are: 
+
+FS1 1A 
+
+Fs2 24 
+
+- 09 = 
+
+
+
+T.1.8.57 
+
+APPENDIX 2 
+
+FUSES IN CARD READER AND LINE PRINTER 
+
+CARD READER 
+
+Pull the top of the front panel forward. Unhook the ring on 
+the end of the chain, Lift the panel off. 
+
+There are six fuses on the left of the centre upright: 
+their ratings are: 
+
+Mains (2 fuses) 3A glass 
+
+6V 500 mA glass 
+
++6V 500 mA glass 
+
+Lanp 500 mA glass 
+
+Clutch 500 nA glass 
+
+There are two fuses on the panel on the right of the centre 
+upright: their retings are: 
+
+-10V 3A glass 
+
++10V 3A glass 
+
+To replace the front panel, fit the holes in the lower flange 
+over the fixed pins,put the ring on the chain over the hook and then push 
+the panel home so that it is held by the catch. 
+
+LINE PRINTER 
+
+There are seven fuses on the panel at the back. Each has its 
+indicator lamp mounted on the fuseholder itself, and each position is marked 
+with the rating of the fuse and the name of the circuit. 
+
+= 40 e 
+
+
+
+57.2.9.64 
+
+READERS 
+
+TELEPRINTER 
+
+PUNCHES 
+
+PANEL (UNDER) 
+
+TO COMPUTER 
+
+FIG. VIEW FROM REAR. PAPER TAPE STATION TYPE 3A 
+
+FIG 1 
+
+
+
+57.2.9.64 
+
+LOUD SPEAKER 
+
+WORD GENERATOR EAMPS 
+
+Sus¥ 
+= ooe e 
+
+PORNeGlo w 
+—, 
+
+see o S 
+o 
+
+= oW sc 
+oveRe 
+
+RELEASE BUTTONS: 
+PRESS TO RELEASE THE OTHER 
+BUTTONS IN THE SAME ROW. 
+
+FIG.2 KEYBOARD 
+
+FIG.2 
+
+
+
+57.2.9.64 
+
+TYPICAL BEGINNING 
+
+SWITCH ON (SEE DETAILED INSTRUCTIONS). 
+THE ROUTINE INCLUDES PRESsING THE BATTERY 
+ON sutron ano THE COMPUTER ON sutTON. 
+
+PRESS THE Four RELEASE surtons. 
+
+rress CLEAR STORE 
+
+rress NORMAL 
+
+rress OPERATE 
+
+. WAIT AT LEAST |2 SECONDS (YOU CAN BE 
+A oWeuTER PUTTING THE TAPE INTO THE READER). 
+
+PRESS EITHER READ or OBEY. 
+
+reLEeEAase CLEAR STORE 8y PRESSING 1T AGAIN. 
+
+PUT FIRST TAPE INTO READER IF NOT ALREADY 
+DONE (SEE DETAILED INSTRUCTIONS). 
+
+PRESs READ 
+
+PRESS FIRST "4 As SHOWN: THIS GIVES THE 
+settine 40 O. 
+
+rress OPERATE 
+
+rress NORMAL 
+
+rress OPERATE 
+
+CAUTION orerations 3 10 6 asove 
+MUST NOT BE PERFORMED BY A LEARNER UNLESS 
+PERMISSION HAS BEEN OBTAINED FROM THE OPERATOR 
+
+FIG.3 INTRODUCTION TO OPERATING IN CHARGE. 
+
+FIG. 3 
+
+SA ONONONONONORO 
+
+
+
+57.2.9. 64. 
+
+PUSH BUTTON, YELLOW Iluminated when reproducer 
+16 under munual control 
+
+PUSH-PUSH BUTTON, WHITE (no light) Single ehot contral of 
+reproducer 
+
+PUSH BUTTON, BLUE Thyminated when reproducer 
+i6 under avtomatic control 
+
+PUSH-PUSH BUTTON GREEN Tluminated when reproducer 
+has power on 
+
+PUSH BUTTON, WHITE (no light—)—  Controle punch run-eut enh 
+
+PUSH BUTTON, ORANGE — Illuminated for Reader Error 
+or Load Condition 
+
+PUSH-PUSH BUTTON YELLOW — LTiluminated when under Manual 
+confrot 
+
+LAMP YELLOW Iluminated when & read or 
+punch insfruction is present 
+
+PUSH BUTTON, GREEN Tluminated when paper tape 
+etation is QN 
+
+PUSH BUTTOM, RED Tliminated utenpapes Saps 
+station is OFF burt power 
+available 
+
+FIG.4 PTS. TYPe | CONTROL PANEL 
+
+FIG.4 
+
+
+
+57.72. 9564 
+
+PUSH BUTTON, YELLOW Uluminated when reproducer 
+i% under manual contrel 
+
+PUSH-PUSH BUTTON, WHITE (no light) Single shol control of 
+reproducer 
+
+PUSH BUTTON, BLUE Tuminated when reproducer 
+is under avtomalic confrol 
+
+PUSH-PUSH BUTTON, GREEN TWuminated when reproducer 
+has power on 
+
+PUSH BUTTON, RED Tluminated when depressed 
+
+PUSH BUTTOM, WH\TE. Tiluminated when Fape has 
+run down 
+
+PUSH BUTTON, ORANGE Tluminated For Reader Error 
+or Lead Cendition 
+
+PUSH-PUSH BUTTON YELLOW-— Illuminated when under Manual 
+control 
+
+LAMP, RED —— — Tlluminated when a read or 
+punch instruction is present 
+
+PUSH BUTTON, GREEN Tlluminared when paper Yape 
+efation is ON 
+
+PUSH BUTTOM, RED —Illuminared when paper fape 
+etation is OFF bul power 
+available 
+
+FIG. S PTS. TYPE 2 CONTROL  PANFI 
+
+FIG.5 
+
+
+
+57.2.9.64. 
+PUSH BUTTON, GREY. Runs out tape on Punch 1. 
+
+PUSH-PUSH BUTTON, BLUE,—— Selects 5 or 8 hole working mode. 
+
+PUSH-PUSH, BUTTON  BL— lUlluEmin,ate d for Reader 2 on 
+PUSH BUTTON, GREY, Runs out tape on Punch 2. 
+
+8-hole working. 
+
+PUSH-BUTTON, YELLOW. —— llluminated for Reader 2 error PUSH-FUSH BUTTON, BLUE.—— Selects 5 or 8 hole working mode. 
+or load condition. 
+
+PUSH-PUSH BUTTON, RED. — llluminated when the role of the two 
+tape readers is interchanged. 
+
+TWO-WAY SWITCH 
+
+PUSH-PUSH BUTTON, BLUE,— llluminated for Reader 1 on Permitting use of the 
+8-hole working. Telieprinter off-line. 
+
+PUSH-BUTTON, YELLOW, —— lltuminated for Reader 1 error 
+or load condition. 
+
+THREE WAY SWITCHES — Provides facility of 
+Outputing Computer onto 
+any of the three 
+
+Output Peripheral Devices. 
+
+PUSH-PUSH BYTTON, YELLOW—.— liluminated when on manual control, 
+
+LAMP, ORANGE, ——————   llluminated when a read or punch 
+or print instruction is present. 
+
+PUSH BUTTON, GREEN.———— lluminated when paper tape station 
+is on. 
+
+PUSH BUTTON, RED. ——— — llluminated when tape is off but power 
+available. 
+
+PTS TYPE 3A CONTROL PANEL 
+
+FlG. 6 
+
+
+
+57.2.9.64] 
+
++10V PUNCH 
+
+oOO 
+—10V READER 
+
+(REAR) 
+
+E 
+(FRONT) 
+
+FIG.9 VIEW FROM REAR FIG.10 VIEW FROM FRONT 
+
+PAPER TAPE STATION ELECTRONICS UNIT 
+
+FIG 9&10 
+
+,_ r 
+v 
+o o
+= s  n” 
+
+F 0:0:0:0:0 
+| õ + 
+
+L F
+> 2  F
+
+' 2
+)  
+
+ 
+” o 
+
+Ê 
+
+o o E 
+m z m 
+E=  < o > 
+
+* õ m 
+E À 
+
+n n n m 
+o @ @ 
+
+n 
+@ 
+
+o I @ G ” 
+o “ 
+o ” O = | 
+
+
+
+57.2.9.64 
+
+O + < 
+
+É á 1 ] 
+BE EG 
+N | 
+o) ; â 
+
+Í 
+Fs1 Fs3 Fss FS7 Fs9 Fsn Fs13 Fs15 FS7 Fs19 Fs21 
+
+Fs2 FS4 Fs6 Fs8 Fst0 Fst2 FS14 FsS16 FSIB FS2O  Fs22 
+T 
+
+o) | f|  
+BT6 Tz | 
+
+PPl  ale s ' l 
+
+O 
+
+FIG.11 FUSES AT BACK OF POWER CABINET 
+FIG.11 
+
+
+
+57 2.9.64 
+
+Fs24 FS26 Fs27 
+
+FS25  Fsa3 
+
+To 
+
+FIG.12 FUSES IN FRONT OF POWER CABINET 
+
+FIG.12 
+
+
+
+57.2.9.64 
+
+S 
+[ &+10 900000 V RIW AMPS 1-20  AMPS 21-40 GEN. 1 GEN. 2 ínovms -10v. NL.A NL 2 BISTABLES  TH.2 TF.2 GEN 
+
+e 5 
+Q ' 0NE  ' 
+
+O 
+—=20V G.1 LoG 2 LOG. 3 LOG. 4 06,5 LoG. 6 106 7 Lde. 8 L06G. 8 INHIB. TH2 GEN ~20V.TRI 1G. } 
+
+Q = 
+O Q 
+Q000000 OOO0OOO 
+
+FIG.13 FUSES IN FRONT OF STORE CABINET 
+
+FlG.13J

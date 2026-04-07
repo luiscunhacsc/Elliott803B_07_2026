@@ -1,0 +1,42 @@
+/* Plotter Section — Continuous Paper Roll Style */
+/* Most plotter styles are in layout.css */
+
+/* Scrollable wrapper — like unrolling paper from the plotter */
+.plotter-wrapper {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: auto;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+/* Custom scrollbar styling for the paper roll feel */
+.plotter-wrapper::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+.plotter-wrapper::-webkit-scrollbar-track {
+    background: #e4e4e4;
+    border-left: 1px solid #ddd;
+}
+
+.plotter-wrapper::-webkit-scrollbar-thumb {
+    background: #999;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    border-radius: 7px;
+}
+
+.plotter-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #666;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
+#plotter-canvas {
+    display: block;
+    background-color: #fff;
+    border: none;
+}

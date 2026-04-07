@@ -1,0 +1,16 @@
+/* Teleprinter Section — Overrides for layout.css */
+/* Most teleprinter styles are now in layout.css */
+/* This file contains only vendor-specific styles */
+
+#teleprinter-container {
+    /* No extra margin — handled by peripheral-unit in layout */
+}
+
+.panel-header {
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: center;
+    letter-spacing: 2px;
+}

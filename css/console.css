@@ -1,0 +1,438 @@
+﻿/* Console Specific Styles */
+
+#console-frame {
+    width: 1350px;
+    margin: 0 auto;
+    background-color: #3b404e;
+    padding: 60px 60px 60px 40px;
+    border-radius: var(--radius-lg, 16px) var(--radius-lg, 16px) 0 0;
+    box-sizing: border-box;
+    box-shadow:
+        inset 0 0 60px rgba(0, 0, 0, 0.5),
+        0 20px 40px rgba(0, 0, 0, 0.6);
+    color: #bbb;
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    position: relative;
+    border: 1px solid #2a2f3a;
+    border-bottom: none;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+#main-interface {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    /* Ensures children stay within the padded bounds */
+}
+
+/* --- Left: Word Generator --- */
+#word-generator {
+    flex: 0 0 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.wg-row-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.row-label {
+    margin-left: 60px;
+    font-family: var(--font-ui, 'Inter', sans-serif);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ccc;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.wg-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wg-gap {
+    width: 40px;
+}
+
+/* Button Styles */
+.wg-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    background: radial-gradient(circle at 35% 35%, #555, #111);
+    box-shadow:
+        4px 4px 8px rgba(0, 0, 0, 0.6),
+        inset 1px 1px 1px rgba(255, 255, 255, 0.2);
+    transition: transform 0.1s;
+    flex-shrink: 0;
+    /* Prevent squashing */
+}
+
+.wg-btn.red-btn {
+    background: radial-gradient(circle at 35% 35%, #a44, #311);
+}
+
+.wg-btn:active,
+.wg-btn.btn-pressed {
+    transform: scale(0.95);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.wg-sublabel {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.55rem;
+    font-weight: 500;
+    color: #999;
+    pointer-events: none;
+    font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+/* --- Right Side: Controls and Lights --- */
+#right-interface {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 20px;
+    /* Added a margin-right to double-insulate the buttons from the edge */
+
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: -1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Top: Lights and Power */
+#top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#status-lights {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.spacer-light {
+    height: 10px;
+}
+
+.status-light-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.light-bar {
+    width: 40px;
+    height: 5px;
+    background-color: #333;
+    border: 1px solid #222;
+    box-shadow: inset 0 0 2px #000;
+}
+
+.light-bar.active {
+    background-color: #ffaa00;
+    box-shadow: 0 0 8px #ffaa00;
+}
+
+.status-light-pair label {
+    font-size: 0.5rem;
+    color: #aaa;
+    text-align: center;
+    line-height: 1.1;
+}
+
+#power-grill-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+#power-controls {
+    display: flex;
+    gap: 30px;
+}
+
+.power-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.power-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.p-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p-btn label {
+    font-size: 0.5rem;
+    margin-top: 4px;
+}
+
+.power-label {
+    font-size: 0.6rem;
+    color: #bbb;
+    margin-top: 5px;
+}
+
+/* Speaker Grills */
+#speaker-grills {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 60%;
+    margin-top: 10px;
+}
+
+.grill-lines {
+    width: 100%;
+    height: 3px;
+    background-color: #222;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Bottom Controls */
+#bottom-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#bottom-controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.control-group-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control-group-single label {
+    font-size: 0.6rem;
+    color: #bbb;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Volume */
+#volume-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.volume-slider-slot {
+    width: 8px;
+    height: 50px;
+    background-color: #222;
+    border-radius: 4px;
+    box-shadow: inset 0 0 3px #000;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.volume-slider-slot {
+    cursor: ns-resize;
+    touch-action: none;
+}
+
+.volume-slider-slot::after {
+    content: '';
+    position: absolute;
+    top: var(--volume-pos, 30%);
+    left: -3px;
+    width: 14px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#volume-section label {
+    font-size: 0.55rem;
+    color: #bbb;
+    text-align: center;
+}
+
+#op-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.op-row {
+    display: flex;
+    gap: 20px;
+}
+
+.op-btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+}
+
+.op-btn-group label {
+    font-size: 0.55rem;
+    color: #bbb;
+    text-align: center;
+    margin-top: 4px;
+}
+
+/* Metal Ring Buttons (Power/Reset/Clear) */
+.control-btn-ring {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: radial-gradient(closest-side, transparent 70%, #bbb 75%, #666 100%),
+        radial-gradient(circle at 30% 30%, #333, #000);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.action-on {
+    background: radial-gradient(closest-side, transparent 65%, #bbb 70%, #666 100%),
+        radial-gradient(circle at 40% 40%, #cfaa40 0%, #7d5f0b 100%);
+}
+
+.action-off {
+    background: radial-gradient(closest-side, transparent 65%, #bbb 70%, #666 100%),
+        radial-gradient(circle at 40% 40%, #902020 0%, #400000 100%);
+}
+
+.action-clear {
+    background: radial-gradient(closest-side, transparent 65%, #bbb 70%, #666 100%),
+        radial-gradient(circle at 40% 40%, #222 0%, #000 100%);
+}
+
+.control-btn-ring:active {
+    transform: scale(0.95);
+}
+
+.control-btn-black-small {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #333, #000);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+}
+
+.control-btn-black {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #222, #000);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+}
+
+.control-btn-black:active {
+    transform: translateY(2px);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #555, #777);
+}
+
+#operate-bar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 10px;
+}
+
+#operate-bar {
+    width: 250px;
+    height: 35px;
+    background: linear-gradient(to bottom, #888, #666);
+    border-radius: 4px;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    border: 1px solid #555;
+    position: relative;
+}
+
+/* -------------------------------------------------------
+   Interlocked mode buttons: READ, NORMAL, OBEY
+   Per the 803B manual these are mechanically interlocked —
+   only one is 'down' (active) at a time.
+   Show a warm amber glow when a button is the active mode.
+------------------------------------------------------- */
+#btn-read.active,
+#btn-normal.active,
+#btn-obey.active {
+    background: radial-gradient(circle at 35% 35%, #c8960a, #6b4800);
+    box-shadow:
+        0 0 10px rgba(200, 150, 10, 0.8),
+        2px 2px 4px rgba(0, 0, 0, 0.6),
+        inset 1px 1px 1px rgba(255, 255, 255, 0.3);
+    transform: translateY(1px);
+}
+
+/* -------------------------------------------------------
+   Push-push (latch) buttons: CLEAR STORE, MANUAL DATA,
+   SELECTED STOP.
+   Per the manual these stay 'down' until pressed again.
+   Show a red-orange glow when latched in.
+------------------------------------------------------- */
+#btn-clear-store.active,
+#btn-manual-data.active,
+#btn-select-stop.active {
+    box-shadow:
+        0 0 12px rgba(220, 80, 20, 0.9),
+        1px 1px 2px rgba(0, 0, 0, 0.6),
+        inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+    transform: translateY(2px);
+    filter: brightness(1.4);
+}
+
+#btn-clear-store.active {
+    background: radial-gradient(circle at 35% 35%, #aa3300, #5a1000);
+}
+#btn-manual-data.active {
+    background: radial-gradient(circle at 35% 35%, #883300, #3a1000);
+}
+#btn-select-stop.active {
+    background: radial-gradient(circle at 35% 35%, #cc5500, #6a1f00);
+}

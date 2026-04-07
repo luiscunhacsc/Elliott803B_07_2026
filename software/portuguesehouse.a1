@@ -1,0 +1,118 @@
+** **
+* Elliott Model 803B Simulator   *
+* Uma Casa Portuguesa            *
+* (Adapted by Luis Cunha, 2026)     *
+** **
+
+* Play "Uma Casa Portuguesa"
+            @entry
+            
+entry:      70  0 : 45 s2            
+s1:         70  0 : 41 play
+s2:         40 s1 : 70  0
+            
+45 s2 : 40 play
+            
+play:       22 index / 30 tune          * Get next note duration
+            42 exit                     * Zero marks the end
+            20 temp  / 30 0             * Map duration to value
+            21 time                     
+            22 index / 30 tune          * Get next note
+         
+            20 temp  / 30 0             * Map note to frequency count
+            20 freq  : 05 six           
+            04 note0 : 20 note          * Recreate 'note' instruction
+      
+            44 note                     * Play the tone!
+exit:       26 index : 02 index         
+            21 index : 40 entry       
+
+* Tone generator logic
+note0:      00  0   : 55  0
+note:       00  0   : 55  0
+            30 freq : 34 time
+            45 note : 40 play  
+
+time:        0                          
+freq:        0                          
+temp:        0                                     
+six:         6                                         
+index:      -1                          
+
+* Note Definitions (C Major scale + accidentals)
+* Added b2, ds3, cs4, d4 for this specific song.
+* Values are cycles (lower value = higher pitch).
+
+b2:         29                          * B2 (Si grave) ~123Hz
+c3:         27                          * C3 (Do)
+d3:         24                          * D3 (Re)
+ds3:        23                          * D#3/Eb3 (Re#)
+e3:         21                          * E3 (Mi)
+f3:         20                          * F3 (Fa)
+g3:         18                          * G3 (Sol)
+a3:         16                          * A3 (La)
+bb3:        15                          * Bb3 (La#)
+b3:         14                          * B3 (Si)
+c4:         13                          * C4 (Do agudo)
+cs4:        12                          * C#4 (Do# agudo)
+d4:         11                          * D4 (Re agudo - approx)
+
+* Timing definitions (approximate rhythm)
+t2:         2000                        * Crotchet/End of phrase
+t1:         1000                        * Quaver/Standard beat
+
+* Tune: Uma Casa Portuguesa
+* Format: duration, note
+
+tune:    
+            * Verso 1: Numa casa portuguesa fica bem
+            t1,c3,  t1,e3,  t1,g3,  t1,g3,  t1,g3,  t1,g3,  t1,f3,  t1,e3
+            t1,d3,  t1,b2,  t2,g3
+
+            * Verso 2: Pao e vinho sobre a mesa
+            t1,b2,  t1,d3,  t1,g3,  t1,g3,  t1,g3,  t1,g3,  t1,e3,  t2,c3
+
+            * Verso 1 Repeticao
+            t1,c3,  t1,e3,  t1,g3,  t1,g3,  t1,g3,  t1,g3,  t1,f3,  t1,e3
+            t1,d3,  t1,b2,  t2,g3
+
+            * Verso 2 Repeticao
+            t1,b2,  t1,d3,  t1,g3,  t1,g3,  t1,g3,  t1,g3,  t1,e3,  t2,c3
+
+            * Ponte: Fica bem esta franqueza
+            t1,f3,  t1,a3,  t1,c4,  t1,c4,  t1,c4,  t1,c4,  t1,bb3, t1,a3,  t1,g3,  t1,e3,  t2,c4
+            
+            * Que o povo nunca desmente
+            t1,e3,  t1,g3,  t1,c4,  t1,c4,  t1,c4,  t1,c4,  t1,a3,  t2,f3
+
+            * A alegria da pobreza...
+            t1,c3,  t1,e3,  t1,g3,  t1,g3,  t1,g3,  t1,g3,  t1,f3,  t1,e3
+            t1,d3,  t1,c3,  t1,b2,  t1,g3,  t1,g3,  t1,g3
+            t1,f3,  t1,e3,  t1,d3,  t1,c3,  t1,b2,  t1,g3,  t1,g3,  t1,g3,  t1,e3,  t2,c3
+
+            * Refrao: Quatro paredes caiadas
+            t1,c3,  t1,c3,  t1,c3,  t1,d3,  t1,d3,  t1,d3,  t2,d3
+            * Um cheirinho a alecrim
+            t1,e3,  t1,e3,  t1,e3,  t1,e3,  t1,f3,  t1,g3,  t2,f3
+            * Um cacho de uvas doiradas
+            t1,c4,  t1,a3,  t1,f3,  t1,c4,  t1,a3,  t1,f3,  t1,e3,  t2,c4
+            * Duas rosas num jardim
+            t1,e3,  t1,ds3, t1,d3,  t1,bb3, t1,cs4, t1,bb3, t2,a3
+
+            * Refrao Pt 2: Um Sao Jose de azulejos
+            t1,c3,  t1,c3,  t1,c3,  t1,d3,  t1,d3,  t1,d3,  t2,d3
+            * Mais o sol da primavera
+            t1,e3,  t1,e3,  t1,e3,  t1,e3,  t1,f3,  t1,g3,  t2,f3
+            * Uma promessa de beijos
+            t1,c4,  t1,c4,  t1,c4,  t1,c4,  t1,bb3, t1,a3,  t1,c4,  t2,bb3
+            * Dois bracos a minha espera
+            t1,bb3, t1,bb3, t1,bb3, t1,bb3, t1,bb3, t1,c4,  t1,bb3, t1,a3,  t2,c4
+
+            * Outro: E uma casa portuguesa com certeza
+            t1,f3,  t1,a3,  t1,c4,  t1,a3,  t1,d4,  t1,a3,  t1,c4,  t1,bb3, t1,g3,  t1,e3,  t2,c4
+            
+            * E, com certeza, uma casa portuguesa
+            t1,e3,  t1,g3,  t1,bb3, t1,c4,  t1,bb3, t1,d4,  t1,a3,  t1,c4
+            t1,g3,  t1,bb3, t1,e3,  t2,f3
+            
+            0

@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Elliott 803B — Emulator</title>
+    <meta name="description"
+        content="A faithful browser-based emulator of the iconic Elliott 803B computer, built in 1960s Britain. Run assembly and ALGOL programs in your browser.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/console.css">
+    <link rel="stylesheet" href="css/printer.css">
+    <link rel="stylesheet" href="css/plotter.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/clock.css">
+</head>
+
+<body>
+    <div id="emulator-container">
+
+        <!-- Header Banner with Logo -->
+        <header id="header-banner">
+            <div id="logo-container">
+                <img src="img/logo.png" alt="National Elliott 803" id="machine-logo">
+            </div>
+            <div id="header-subtitle">Browser Emulator</div>
+        </header>
+
+        <!-- Main Console Frame -->
+        <div id="console-frame">
+
+            <div id="main-interface">
+                <!-- Left Side: Word Generator Buttons -->
+                <div id="word-generator">
+
+                    <!-- Row F1 -->
+                    <div class="wg-row-container">
+                        <div class="row-label">FUNCTION 1</div>
+                        <div class="wg-row" id="row-f1">
+                            <!-- JS will inject: Red Clear, Gap, 6 Black (4-2-1 4-2-1) -->
+                        </div>
+                    </div>
+
+                    <!-- Row N1 (Address 1) -->
+                    <div class="wg-row-container">
+                        <div class="row-label">ADDRESS 1</div>
+                        <div class="wg-row" id="row-n1">
+                            <!-- JS will inject: Red Clear, Gap, 13 Black, Gap, 1 Red (B) -->
+                        </div>
+                    </div>
+
+                    <!-- Row F2 -->
+                    <div class="wg-row-container">
+                        <div class="row-label">FUNCTION 2</div>
+                        <div class="wg-row" id="row-f2">
+                            <!-- JS will inject: Red Clear, Gap, 6 Black -->
+                        </div>
+                    </div>
+
+                    <!-- Row N2 (Address 2) -->
+                    <div class="wg-row-container">
+                        <div class="row-label">ADDRESS 2</div>
+                        <div class="wg-row" id="row-n2">
+                            <!-- JS will inject: Red Clear, Gap, 13 Black -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center: Center Controls (Selected Stop, etc) & Lights? -->
+                <!-- Based on photo interpretation: 
+                     Left: WG
+                     Right Block: Everything else (Lights, Grills, Controls) 
+                -->
+                <div id="right-interface">
+
+                    <!-- Top Section: Lights & Power -->
+                    <div id="top-section">
+                        <!-- Status Lights Column -->
+                        <div id="status-lights">
+                            <div class="status-light-pair">
+                                <div class="light-bar" id="light-parity"></div><label>PARITY</label>
+                            </div>
+                            <div class="status-light-pair">
+                                <div class="light-bar" id="light-block"></div><label>BLOCK TRANSFER</label>
+                            </div>
+                            <div class="status-light-pair">
+                                <div class="light-bar" id="light-busy"></div><label>BUSY</label>
+                            </div>
+                            <div class="spacer-light"></div>
+                            <div class="status-light-pair">
+                                <div class="light-bar" id="light-fp-overflow"></div><label>FLOATING
+                                    POINT<br>OVERFLOW</label>
+                            </div>
+                            <div class="status-light-pair">
+                                <div class="light-bar" id="light-step"></div><label>STEP BY STEP</label>
+                            </div>
+                            <div class="status-light-pair">
+                                <div class="light-bar" id="light-overflow"></div><label>OVERFLOW</label>
+                            </div>
+                        </div>
+
+                        <!-- Grills & Power -->
+                        <div id="power-grill-block">
+                            <!-- Battery / Computer Power -->
+                            <div id="power-controls">
+                                <div class="power-group">
+                                    <div class="power-buttons">
+                                        <div class="p-btn"><button class="control-btn-ring action-on"
+                                                id="btn-batt-on"></button><label>ON</label></div>
+                                        <div class="p-btn"><button class="control-btn-ring action-off"
+                                                id="btn-batt-off"></button><label>OFF</label></div>
+                                    </div>
+                                    <div class="power-label">BATTERY</div>
+                                </div>
+                                <div class="power-group">
+                                    <div class="power-buttons">
+                                        <div class="p-btn"><button class="control-btn-ring action-on"
+                                                id="btn-comp-on"></button><label>ON</label></div>
+                                        <div class="p-btn"><button class="control-btn-ring action-off"
+                                                id="btn-comp-off"></button><label>OFF</label></div>
+                                    </div>
+                                    <div class="power-label">COMPUTER</div>
+                                </div>
+                            </div>
+
+                            <!-- Grills below power? or Center? 
+                                  Usually grills are central. Let's put them here.
+                             -->
+                            <div id="speaker-grills">
+                                <div class="grill-lines"></div>
+                                <div class="grill-lines"></div>
+                                <div class="grill-lines"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Section: Selected Stop, Volume, 6-Buttons -->
+                    <div id="bottom-section">
+
+                        <div id="bottom-controls-row">
+                            <!-- Selected Stop (Left-ish) -->
+                            <div class="control-group-single">
+                                <button class="control-btn-black" id="btn-select-stop"></button>
+                                <label>SELECTED<br>STOP</label>
+                            </div>
+
+                            <!-- Volume Slider (Vertical Slot) -->
+                            <div id="volume-section">
+                                <div class="volume-slider-slot"></div>
+                                <label>LOUDSPEAKER<br>VOLUME</label>
+                            </div>
+
+                            <!-- 6-Button Block (Right) -->
+                            <div id="op-controls">
+                                <!-- Upper: Clear Store, Manual Data, Reset -->
+                                <div class="op-row">
+                                    <div class="op-btn-group"><button class="control-btn-ring action-clear"
+                                            id="btn-clear-store"></button><label>CLEAR<br>STORE</label></div>
+                                    <div class="op-btn-group"><button class="control-btn-black-small"
+                                            id="btn-manual-data"></button><label>MANUAL<br>DATA</label></div>
+                                    <div class="op-btn-group"><button class="control-btn-ring action-clear"
+                                            id="btn-reset"></button><label>RESET</label></div>
+                                </div>
+                                <!-- Lower: Read, Normal, Obey -->
+                                <div class="op-row">
+                                    <div class="op-btn-group"><button class="control-btn-black"
+                                            id="btn-read"></button><label>READ</label></div>
+                                    <div class="op-btn-group"><button class="control-btn-black"
+                                            id="btn-normal"></button><label>NORMAL</label></div>
+                                    <div class="op-btn-group"><button class="control-btn-black"
+                                            id="btn-obey"></button><label>OBEY</label></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operate Bar (White Lever) - Bottom Center of Console -->
+            <div id="operate-bar-container">
+                <div id="operate-bar" title="Operate (Run/Stop)"></div>
+            </div>
+        </div>
+
+        <!-- Desk Area: Operator Panel + Clock Side by Side -->
+        <div id="desk-area">
+            <!-- Operator Control Panel (Desk Surface) -->
+            <div id="operator-panel">
+                <!-- Tape Reader 1 -->
+                <div class="panel-section">
+                    <div class="panel-label">READER 1</div>
+                    <div class="tape-controls">
+                        <select id="tape-library-select" class="tape-select" style="width: 100%;">
+                            <option value="">(Select Tape from Library)</option>
+                        </select>
+                    </div>
+                    <div id="reader1-status" class="status-indicator">EMPTY</div>
+                    <label class="checkbox-label"><input type="checkbox" id="swap-readers"> SWAP READERS</label>
+                </div>
+
+                <!-- Tape Reader 2 -->
+                <div class="panel-section">
+                    <div class="panel-label">READER 2</div>
+                    <div class="tape-controls"></div>
+                    <div id="reader2-status" class="status-indicator">EMPTY</div>
+                </div>
+
+                <!-- Punches -->
+                <div class="panel-section">
+                    <div class="panel-label">PUNCHES</div>
+                    <div class="punch-buttons">
+                        <button id="btn-download-punch1" class="operator-btn" title="Download Punch 1 Output">GET
+                            P1</button>
+                        <button id="btn-download-punch2" class="operator-btn" title="Download Punch 2 Output">GET
+                            P2</button>
+                    </div>
+                    <label class="checkbox-label"><input type="checkbox" id="swap-punches"> SWAP PUNCHES</label>
+                </div>
+
+                <!-- Guides -->
+                <div class="panel-section">
+                    <div class="panel-label">GUIDES</div>
+                    <div class="panel-buttons-col">
+                        <button id="btn-guide-algol" class="operator-btn">ALGOL</button>
+                        <button id="btn-guide-asm" class="operator-btn">ASSEMBLY</button>
+                    </div>
+                </div>
+
+                <!-- ALGOL -->
+                <div class="panel-section">
+                    <div class="panel-label">ALGOL</div>
+                    <div class="panel-buttons-col">
+                        <button id="btn-install-algol" class="operator-btn">ALGOL MODE</button>
+                        <div id="run-status" class="panel-status-cpu">CPU: STOPPED</div>
+                        <div id="algol-status" class="panel-status-algol">ALGOL: NOT INSTALLED</div>
+                        <div id="debug-status" class="panel-status-debug">DBG busy=0 r1=0 f1=0 f2=0 scr=0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Room Wall Clock -->
+            <div id="clock-column">
+                <div id="elliott-clock-container"></div>
+                <div id="speed-toggle-container">
+                    <div class="speed-toggle">
+                        <button id="btn-speed-realtime" class="speed-btn active">REAL‑TIME</button>
+                        <button id="btn-speed-turbo" class="speed-btn">TURBO</button>
+                    </div>
+                </div>
+                <button id="btn-reset-clock" class="clock-reset-btn" title="Reset clock to current time">↻ RESET</button>
+            </div>
+        </div>
+
+        <!-- Peripherals Section (Below Console) -->
+        <div id="peripherals-section">
+            <!-- Teleprinter Output -->
+            <div id="teleprinter-container" class="peripheral-unit">
+                <div class="peripheral-header">
+                    <div class="ph-title">TELEPRINTER MODEL 75</div>
+                    <div class="ph-status">ONLINE</div>
+                </div>
+                <textarea id="teleprinter-output" readonly></textarea>
+            </div>
+
+            <!-- Plotter Output -->
+            <div id="plotter-container" class="peripheral-unit">
+                <div class="peripheral-header">
+                    <div class="ph-title">DIGITAL PLOTTER</div>
+                    <div class="ph-status">READY</div>
+                </div>
+                <div class="plotter-wrapper">
+                    <canvas id="plotter-canvas" width="600" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts (Loaded sequentially for non-module support) -->
+    <script src="js/assets.js"></script>
+    <script src="js/assets_algol_system.js"></script>
+    <script src="js/assets_algol803.js"></script>
+    <script src="js/assets_a104_1.js"></script>
+    <script src="js/assets_a104_2.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/tape.js"></script>
+    <script src="js/teletype.js"></script>
+    <script src="js/plotter.js"></script>
+    <script src="js/alu.js"></script>
+    <script src="js/fpu.js"></script>
+    <script src="js/console-device.js"></script>
+    <script src="js/cpu.js"></script>
+    <script src="js/elliott803.js"></script>
+    <script src="js/printer.js"></script>
+    <script src="js/console.js"></script>
+    <script src="js/guide.js"></script>
+    <script src="js/assembler.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/main.js?v=debug1"></script>
+</body>
+
+</html>
