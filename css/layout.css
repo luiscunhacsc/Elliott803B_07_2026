@@ -151,6 +151,13 @@
     text-transform: uppercase;
 }
 
+.panel-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
 .status-indicator {
     font-family: var(--font-mono);
     font-size: 10px;
@@ -189,6 +196,69 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+/* Marker accent for the Guides panel */
+.guides-marker {
+    position: relative;
+    border-radius: 10px;
+    padding: 4px 8px 8px;
+}
+
+.guides-marker::before {
+    content: '';
+    position: absolute;
+    inset: -4px -7px -6px -7px;
+    border-radius: 12px;
+    border: 3px solid rgba(255, 247, 0, 0.96);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 170, 0.95),
+        0 0 18px rgba(255, 247, 0, 0.95),
+        0 0 34px rgba(255, 247, 0, 0.7);
+    transform: rotate(-1.2deg);
+    background: transparent;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.guides-marker > * {
+    position: relative;
+    z-index: 1;
+}
+
+.guides-marker .panel-label {
+    color: #fff9a8;
+    font-size: 11px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 247, 0, 0.75);
+}
+
+.guides-about-btn {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(22, 26, 36, 0.7);
+    color: #eef2fb;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+}
+
+.guides-about-btn:hover {
+    background: rgba(34, 40, 54, 0.92);
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+.guides-about-btn:active {
+    transform: translateY(1px);
+}
+
+.guides-about-btn:focus-visible {
+    outline: 2px solid #fff36a;
+    outline-offset: 2px;
 }
 
 /* Panel Status indicators — fixed-width to prevent layout thrashing */
@@ -557,5 +627,128 @@ input[type="file"] {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* About dialog */
+body.modal-open {
+    overflow: hidden;
+}
+
+.about-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(9, 12, 18, 0.76);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 12000;
+}
+
+.about-modal-overlay[hidden] {
+    display: none;
+}
+
+.about-modal {
+    width: min(720px, 100%);
+    max-height: min(86vh, 760px);
+    overflow-y: auto;
+    background: linear-gradient(180deg, #1e2531 0%, #171e29 100%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55);
+    padding: 22px 24px 18px;
+    position: relative;
+}
+
+.about-modal h2 {
+    font-family: var(--font-ui);
+    font-size: 20px;
+    font-weight: 700;
+    color: #f4f7ff;
+    margin-right: 28px;
+}
+
+.about-modal-body {
+    margin-top: 14px;
+    color: #d8deec;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 1.6;
+    display: grid;
+    gap: 12px;
+}
+
+.about-modal-body a {
+    color: #9cd7ff;
+    word-break: break-word;
+}
+
+.about-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f2f5fd;
+    font-size: 24px;
+    line-height: 1;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.about-modal-close:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.about-modal-close:focus-visible {
+    outline: 2px solid #fff36a;
+    outline-offset: 2px;
+}
+
+.about-modal-actions {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-modal-dismiss-btn {
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: linear-gradient(to bottom, #edf0f5, #d0d6e0);
+    color: #232a35;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.about-modal-dismiss-btn:hover {
+    filter: brightness(1.03);
+}
+
+.about-modal-dismiss-btn:focus-visible {
+    outline: 2px solid #fff36a;
+    outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+    .about-modal {
+        max-height: 92vh;
+        padding: 18px 16px 14px;
+    }
+
+    .about-modal h2 {
+        font-size: 18px;
+    }
+
+    .about-modal-body {
+        font-size: 13px;
     }
 }

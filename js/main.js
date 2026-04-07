@@ -310,7 +310,83 @@ function setupControls() {
     // Default to real-time mode
     setTurboMode(false);
 
+    setupAboutModal();
     setupVolumeControl();
+}
+
+function setupAboutModal() {
+    const openBtn = document.getElementById('btn-guides-about');
+    const overlay = document.getElementById('about-modal-overlay');
+    const dialog = document.getElementById('about-modal');
+    if (!openBtn || !overlay || !dialog) return;
+
+    const closeButtons = overlay.querySelectorAll('[data-about-close]');
+    let lastFocusedElement = null;
+
+    const getFocusableInDialog = () => Array.from(dialog.querySelectorAll(
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    ));
+
+    function closeModal() {
+        overlay.hidden = true;
+        document.body.classList.remove('modal-open');
+        openBtn.setAttribute('aria-expanded', 'false');
+        document.removeEventListener('keydown', onModalKeydown);
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+            lastFocusedElement.focus();
+        }
+    }
+
+    function openModal() {
+        lastFocusedElement = document.activeElement;
+        overlay.hidden = false;
+        document.body.classList.add('modal-open');
+        openBtn.setAttribute('aria-expanded', 'true');
+        document.addEventListener('keydown', onModalKeydown);
+
+        const focusable = getFocusableInDialog();
+        if (focusable.length > 0) {
+            focusable[0].focus();
+        } else {
+            dialog.focus();
+        }
+    }
+
+    function onModalKeydown(event) {
+        if (overlay.hidden) return;
+
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeModal();
+            return;
+        }
+
+        if (event.key !== 'Tab') return;
+
+        const focusable = getFocusableInDialog();
+        if (focusable.length === 0) {
+            event.preventDefault();
+            return;
+        }
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeButtons.forEach((btn) => btn.addEventListener('click', closeModal));
+
+    overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) closeModal();
+    });
 }
 
 function setTurboMode(enabled) {

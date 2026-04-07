@@ -224,8 +224,12 @@
                 </div>
 
                 <!-- Guides -->
-                <div class="panel-section">
-                    <div class="panel-label">GUIDES</div>
+                <div class="panel-section guides-marker" id="guides-section">
+                    <div class="panel-label-row">
+                        <div class="panel-label">GUIDES</div>
+                        <button id="btn-guides-about" class="guides-about-btn" type="button" aria-haspopup="dialog"
+                            aria-controls="about-modal-overlay" aria-expanded="false">About</button>
+                    </div>
                     <div class="panel-buttons-col">
                         <button id="btn-guide-algol" class="operator-btn">ALGOL</button>
                         <button id="btn-guide-asm" class="operator-btn">ASSEMBLY</button>
@@ -280,6 +284,43 @@
             </div>
         </div>
 
+    </div>
+
+    <div id="about-modal-overlay" class="about-modal-overlay" hidden>
+        <div id="about-modal" class="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-modal-title"
+            aria-describedby="about-modal-body" tabindex="-1">
+            <button class="about-modal-close" type="button" data-about-close aria-label="Close About dialog">×</button>
+            <h2 id="about-modal-title">About This Emulator</h2>
+            <div id="about-modal-body" class="about-modal-body">
+                <p>
+                    The Elliott 803B was likely the very first digital computer installed in Portugal, arriving at
+                    Banco Pinto de Magalhães around 1961. Currently, this emulator is designed specifically to run the
+                    programs featured in my guided tours. However, I am actively working on making the console fully
+                    operational.
+                </p>
+                <p>
+                    Recreating the complex button mechanics of the original physical machine has been quite a
+                    challenge. Still, I hope these ready-to-run tapes give curious users a genuine feel for how this
+                    historic system operated in its prime.
+                </p>
+                <p>
+                    I would like to express my sincere gratitude to Tim Baldwin, whose foundational emulator paved the
+                    way for this project. I am also deeply thankful to Peter Onion, the dedicated maintainer of the
+                    actual 803B at The National Museum of Computing (TNMOC).
+                </p>
+                <p>
+                    As a great admirer of early "big-iron" systems, Peter's incredibly helpful videos were essential in
+                    guiding my efforts. His own emulator is truly the best I have ever seen, and I highly encourage you
+                    to check it out here:
+                    <a href="https://www.peteronion.org.uk/Elliott" target="_blank"
+                        rel="noopener noreferrer">https://www.peteronion.org.uk/Elliott</a>.
+                </p>
+                <p>Luís Simões da Cunha, Coimbra, 2026</p>
+            </div>
+            <div class="about-modal-actions">
+                <button class="about-modal-dismiss-btn" type="button" data-about-close>Close</button>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts (Loaded sequentially for non-module support) -->
